@@ -3,6 +3,7 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.datetime.Clock
 import kotlinx.datetime.toJavaInstant
@@ -28,20 +29,21 @@ class MainActivity : AppCompatActivity() {
             }
             binding.etNewWriting.setText("")
         }
-
-        /*
-            Tests for android can not guarantee the correctness of solutions that make use of
-            mutation on "static" variables to keep state. You should avoid using those.
-            Consider "static" as being anything on kotlin that is transpiled to java
-            into a static variable. That includes global variables and variables inside
-            singletons declared with keyword object, including companion object.
-            This limitation is related to the use of JUnit on tests. JUnit re-instantiate all
-            instance variable for each test method, but it does not re-instantiate static variables.
-            The use of static variable to hold state can lead to state from one test to spill over
-            to another test and cause unexpected results.
-            Using mutation on static variables to keep state
-            is considered a bad practice anyway and no measure
-            attempting to give support to that pattern will be made.
-         */
+        binding.btnUndo.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Remove last note")
+                .setMessage("Do you really want to remove the last writing? This operation cannot be undone!")
+                .setPositiveButton("Yes") { _,_ ->
+                    binding.tvDiary.text = removeUntilDoubleNewLine(binding.tvDiary.text)
+                }.setNegativeButton("No", null).show()
+        }
+    }
+    fun removeUntilDoubleNewLine(s: CharSequence): CharSequence {
+        val index = s.indexOf("\n\n")
+        return if (index != -1) {
+            s.substring(index + 2)
+        } else {
+            ""
+        }
     }
 }

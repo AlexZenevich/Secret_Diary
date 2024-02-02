@@ -1924,6 +1924,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnSave
+id btnUndo
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2559,6 +2560,7 @@ string path_password_strike_through
 string save
 string search_menu_title
 string status_bar_notification_info_overflow
+string undo
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
