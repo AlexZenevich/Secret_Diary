@@ -1,4 +1,4 @@
-#Sat Feb 03 14:41:45 MSK 2024
+#Wed Feb 07 15:36:13 MSK 2024
 base.0=E\:\\Secret Diary\\Secret Diary\\task\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

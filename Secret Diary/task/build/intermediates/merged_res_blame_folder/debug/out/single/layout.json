@@ -2,5 +2,9 @@
     {
         "merged": "org.hyperskill.secretdiary.Secret_Diary-task-mergeDebugResources-20:/layout/activity_main.xml",
         "source": "org.hyperskill.secretdiary.Secret_Diary-task-main-23:/layout/activity_main.xml"
+    },
+    {
+        "merged": "org.hyperskill.secretdiary.Secret_Diary-task-mergeDebugResources-20:/layout/activity_login.xml",
+        "source": "org.hyperskill.secretdiary.Secret_Diary-task-main-23:/layout/activity_login.xml"
     }
 ]
